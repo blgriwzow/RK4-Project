@@ -72,13 +72,24 @@ def main():
         #### Here goes an arrey to save all the values ###
 
         ## Here is step number one, giving a first aproximation ##
-        if x >= 1.5:
+        if x == 1.5:
            break
+        elif x > 1.5:
+            # THIS BLOCK IS AN INCOMPLETE PLAN FOR 
+            # PREVENTING x FROM EXCEEDING 1.5, though it seems to work!
+            del xpoint[-1] #undo the previous points
+            del ypoint[-1]
+            xcounter = x-h #reset xcounter to previous step
+            x = xcounter
+            yAprox = yAprox - m*h #undo the previous yAprox
+            h = 1.5-x #update the step size so x reaches 1.5
+        
         
     print('ITS DONE! , now lets plot this :D ')
 
 
 
     print(x,'space', kThree, 'Space', yAprox)
+
 main()
 ## Calling the plot function 
